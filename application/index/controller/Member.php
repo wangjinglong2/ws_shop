@@ -570,8 +570,7 @@ class Member extends \think\Controller
                 # code...
                 return view('appointment');
             }
-        
-
+            $url = url('/index/member/myhome');
         return view();
         
     }
@@ -826,8 +825,6 @@ class Member extends \think\Controller
             dump('订单号'.$trade_no);
             dump($phone);
         }
-
-
         $this->assign('total_fee',$total_fee);
         $this->assign('subject',$subject);
         $this->assign('body',$body);

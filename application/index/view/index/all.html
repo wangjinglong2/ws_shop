@@ -71,7 +71,7 @@
 
  
         <!--课程章节开始的位置-->
-        <h5>{$Think.cookie.phone?'':'<a href="__ROOT__/index/index/login ">登录后可保存学习进度</a>';}</h5>
+        <h5>{$Think.cookie.phone?'':'<a href="{:url('/index/index/login')} ">登录后可保存学习进度</a>';}</h5>
         <style>
             .table-hover td{
                 vertical-align:middle;/** 设置垂直方向居中 */
@@ -82,9 +82,9 @@
             <tr>
                 <th> ID</th>
                 <th> 课程标题</th>
-                <th>   {$Think.cookie.vip?'学习进度':'<a href="__ROOT__/index/index/view/id/105 ">价格</a>';}
+                <th>   {$Think.cookie.vip?'学习进度':'<a href="{:url('/index/index/view/id/105')} ">价格</a>';}
                     <!-- 提示加入vip -->
-                    <small>{$Think.cookie.vip?'':'<a href="__ROOT__/index/index/view/id/105 ">VIP全部免费</a>';}</small>
+                    <small>{$Think.cookie.vip?'':'<a href="{:url('/index/index/view/id/105')} ">VIP全部免费</a>';}</small>
                 </th>
                 <th> 播放/购买</th>
             </tr>
@@ -136,7 +136,7 @@
 
             <tr>
                 <th style="vertical-align:middle;"> {$user.sort?: '置顶'}  </th>
-                <td style="vertical-align:middle;"><a href="__ROOT__/index/index/view/id/{$user.id} ">{$user.title|mb_substr=0,50,'utf-8' }</a>  <small style="color: #ccc;font-size: x-small ">{$user.page_view}人在学 {$user.play_count}学员  </small> </td>
+                <td style="vertical-align:middle;"><a href="{:url('/index/index/view/id/')}{$user.id} ">{$user.title|mb_substr=0,50,'utf-8' }</a>  <small style="color: #ccc;font-size: x-small ">{$user.page_view}人在学 {$user.play_count}学员  </small> </td>
                 <td style="vertical-align:middle;min-width: 78px;">
                     {if condition="$Think.cookie.vip>0"}
                     {if condition="$user.video_status>0"}
@@ -171,7 +171,7 @@
                     {else /}
 
                         {if condition="$user.play_count > 10" }
-                            <a href="__ROOT__/index/index/view/id/{$user.id}" class="btn btn-success" target="_blank">
+                            <a href="{:url('/index/index/view/id/')}{$user.id}" class="btn btn-success" target="_blank">
 
                             {$user.address? $user.price>0?'立即播放':'免费播放':'查看详情'} </a>
 
@@ -180,13 +180,13 @@
 
                             {if condition="$Think.cookie.vip>=1"}
 
-                    <a href="__ROOT__/index/index/view/id/{$user.id}" class="btn btn-warning" target="_blank">
+                    <a href="{:url('/index/index/view/id/')}{$user.id}" class="btn btn-warning" target="_blank">
 
                     VIP 免费
                     </a>
                     {else /}
 
-                    <a href="__ROOT__/index/index/view/id/{$user.id}" class="btn btn-success" target="_blank">
+                    <a href="{:url('/index/index/view/id/')}{$user.id}" class="btn btn-success" target="_blank">
 
                         限时免费
                     </a>
@@ -219,7 +219,7 @@
         <div class="btn-group btn-group-justified " style="padding-bottom: 20px;">
             <a class="btn btn-success btn-registration"  style="font-size: 12px;"style="font-size: 12px;" onclick="ajaxModelPay('0.1','135','签到{$Think.cookie.phone}{:date("y年m月d日 H:i:s")}','135{$Think.cookie.phone}{:time()}')">
             点此处签到<br>签到有好礼</a>
-            <a class="btn btn-primary" href="__ROOT__/index/member/registration" style="font-size: 12px;">{:date("Y年m月d日")}<br>
+            <a class="btn btn-primary" href="{:url('/index/member/registration')}" style="font-size: 12px;">{:date("Y年m月d日")}<br>
                 今日已有{$registration_count}人签到</a>
         </div>
 
@@ -371,8 +371,8 @@
 
 
         <div class="list-group">
-            <a href="__ROOT__/#section-1" class="list-group-item list-group-item-success">第一季 零基础入门 ThinkPHP5 简易BBS留言板 </a>
-            <a href="__ROOT__/#section-2" class="list-group-item list-group-item-info">第二季 实战 ThinkPHP5 简易SHOP商城 </a>
+            <a href="{:url('/')}#section-1" class="list-group-item list-group-item-success">第一季 零基础入门 ThinkPHP5 简易BBS留言板 </a>
+            <a href="{:url('/')}#section-2" class="list-group-item list-group-item-info">第二季 实战 ThinkPHP5 简易SHOP商城 </a>
             <a href="__ROOT__/index.php?page=2#section-3" class="list-group-item list-group-item-success">第三季 提高 ThinkPHP5 AJAX入门 及商城提高 </a>
             <a href="__ROOT__/index.php?page=2#section-4" class="list-group-item list-group-item-info">第四季 ThinkPHP5 模型关联入门  及商城扩展 </a>
         </div>

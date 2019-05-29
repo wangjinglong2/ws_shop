@@ -181,7 +181,7 @@ class Bbs extends \think\Controller
 
 //            echo '<h5 class="text-center"><small>您已累计在线'.$user['online_time'].'分钟</small></h5>';
 
-            $user->online_time     = $user['online_time']+3;
+            $user->online_time     = isset($user['online_time'])?$user['online_time']:1+3;
 
             $user->save();
 

@@ -91,10 +91,10 @@
         <div class="page-header"  >
             <h2><a href="{$Think.server.script_name}">{:lang('Tp5简易商城')}</a><small>  
                 {:lang('入门视频课')}   
-        <a href="__ROOT__/index/index/index/lang/zh-cn">{:lang('中文')}</a>
-        <a href="__ROOT__/index/index/index/lang/en-us">{:lang('English')}</a> 
-        <a href="__ROOT__/index/index/index/screen/1">全屏</a> 
-        <a href="__ROOT__/index/index/index/screen/0">窄屏</a> 
+        <a href="{:url('/index/index/index/lang/zh-cn')}">{:lang('中文')}</a>
+        <a href="{:url('/index/index/index/lang/en-us')}">{:lang('English')}</a>
+        <a href="{:url('/index/index/index/screen/1')}">全屏</a>
+        <a href="{:url('/index/index/index/screen/0')}">窄屏</a>
         <!-- <a href="__ROOT__/index/index/index/lang/thai">{:lang('บทความภาษาไทย')}</a> 
         <a href="__ROOT__/index/index/index/lang/fayu">{:lang('Français')}</a>  -->
         </small>
@@ -247,17 +247,17 @@
               <small>
 
  <span class="glyphicon glyphicon-fire" style="color: #337ab7"  aria-hidden="true"></span> 
-                        <a href="__ROOT__/index/index/index">{:lang('热门课程')}</a> &nbsp;&nbsp;&nbsp;
+                        <a href="{:url('/index/index/index')">{:lang('热门课程')}</a> &nbsp;&nbsp;&nbsp;
 
 
 
-                        <a href="__ROOT__/index/index/news"><span class="glyphicon glyphicon-sort-by-order-alt" aria-hidden="true"></span></a>
-                        <a href="__ROOT__/index/index/news">{:lang('最新课程')}</a> &nbsp;&nbsp;&nbsp;
+                        <a href="{:url('/index/index/news')}"><span class="glyphicon glyphicon-sort-by-order-alt" aria-hidden="true"></span></a>
+                        <a href="{:url('/index/index/news')}">{:lang('最新课程')}</a> &nbsp;&nbsp;&nbsp;
 
 
 
-                        <a href="__ROOT__/index/index/all"><span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"</small>
-                        <a href="__ROOT__/index/index/all">{:lang('全部课程')}</a></small> &nbsp;&nbsp;&nbsp;
+                        <a href="{:url('/index/index/all')}"><span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"</small>
+                        <a href="{:url('/index/index/all')}">{:lang('全部课程')}</a></small> &nbsp;&nbsp;&nbsp;
         </h5>
 
 
@@ -272,7 +272,7 @@
  
             <tr>
                  
-                <td style="vertical-align:middle;"><a href="__ROOT__/index/index/view/id/{$user.id} ">{$user.title|mb_substr=0,50,'utf-8' }</a>
+                <td style="vertical-align:middle;"><a href="{:url('/index/index/view/id/')}{$user.id} ">{$user.title|mb_substr=0,50,'utf-8' }</a>
                     <small style="color: #ccc;font-size: x-small ">{$user.footprint_count}次学<!-- {$user.page_view} -->习  {$user.update_time} 更新</small>
 
                 </td>
@@ -280,7 +280,7 @@
                 <td style="vertical-align:middle;">
  
                      
-                            <a href="__ROOT__/index/index/view/id/{$user.id}" class="btn btn-success" target="_blank">
+                            <a href="{:url('/index/index/view/id/')}{$user.id}" class="btn btn-success" target="_blank">
 
                                 立即学习
                             </a>
@@ -309,7 +309,7 @@
         <div class="btn-group btn-group-justified " style="padding-bottom: 20px;">
             <a class="btn btn-success btn-registration"  style="font-size: 12px;"style="font-size: 12px;" onclick="public_ajax('{$Think.server.script_name}/index/member/registration/',1);">
             点此处签到<br>签到有好礼</a>
-            <a class="btn btn-primary" href="__ROOT__/index/member/registration" style="font-size: 12px;">{:date("Y年m月d日")}<br>
+            <a class="btn btn-primary" href="{:url('/index/member/registration')}" style="font-size: 12px;">{:date("Y年m月d日")}<br>
                 今日已有{$registration_count}人签到</a>
         </div>
 
@@ -392,10 +392,10 @@
 
 
         <div class="list-group">
-            <a href="__ROOT__/#section-1" class="list-group-item list-group-item-success">第一季 零基础入门 ThinkPHP5 简易BBS留言板 </a>
-            <a href="__ROOT__/#section-2" class="list-group-item list-group-item-info">第二季 实战 ThinkPHP5 简易SHOP商城 </a>
-            <a href="__ROOT__/index.php?page=2#section-3" class="list-group-item list-group-item-success">第三季 提高 ThinkPHP5 AJAX入门 及商城提高 </a>
-            <a href="__ROOT__/index.php?page=2#section-4" class="list-group-item list-group-item-info">第四季 ThinkPHP5 模型关联入门  及商城扩展 </a>
+            <a href="{:url('/')}#section-1" class="list-group-item list-group-item-success">第一季 零基础入门 ThinkPHP5 简易BBS留言板 </a>
+            <a href="{:url('/')}#section-2" class="list-group-item list-group-item-info">第二季 实战 ThinkPHP5 简易SHOP商城 </a>
+            <a href="{:url('/')}index.php?page=2#section-3" class="list-group-item list-group-item-success">第三季 提高 ThinkPHP5 AJAX入门 及商城提高 </a>
+            <a href="{:url('/')}index.php?page=2#section-4" class="list-group-item list-group-item-info">第四季 ThinkPHP5 模型关联入门  及商城扩展 </a>
         </div>
 
         <div class="panel panel-default">

@@ -38,8 +38,6 @@
           })
       }
 
-
-
   </script>
 </head>
 
@@ -135,7 +133,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
 
-              {if condition="$Request.url == '__ROOT__/index/member/news'"}
+              {if($Request.url == url('/index/member/news'))}
                   <li class="active" data-placement="bottom" title="Tooltip on bottom">
                {else/}
                 <li >
@@ -144,14 +142,14 @@
       
               <a href="{:url('index/index/course')}">{:lang('课程表')}<span class="sr-only">(current)</span></a></li>
            
-                {if condition="$Request.url == '__ROOT__/index/member/top'"}
+                {if ($Request.url == url('/index/member/top'))}
                   <li class="active" data-placement="bottom" title="Tooltip on bottom">
                {else/}
                 <li >
               {/if}
 
 
-                  <a href="__ROOT__/index/member/top">{:lang('榜上有名')}
+                  <a href="{:url('/index/member/top')}">{:lang('榜上有名')}
                
             </a>
                 </li>
@@ -159,23 +157,23 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{:lang('实战入门')} <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 
-                <li><a href="__ROOT__/index/bbs/show">学员评论</a></li>
-                <li><a href="__ROOT__/index/ajax/ajaxrun">最新学员</a></li>
-                <li> <a href="__ROOT__/index/member/news">{:lang('最新动态')}<span class="sr-only">(current)</span></a></li>
+                <li><a href="{:url('/index/bbs/show')}">学员评论</a></li>
+                <li><a href="{:url('/index/ajax/ajaxrun')}">最新学员</a></li>
+                <li> <a href="{:url('/index/member/news')}">{:lang('最新动态')}<span class="sr-only">(current)</span></a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="__ROOT__/index/member/learning">正在上课学员</a></li>
+                <li><a href="{:url('/index/member/learning')}">正在上课学员</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="__ROOT__/index/member/registration">签到排行</a></li>
-                <li><a href="__ROOT__/index/member/top">排行榜</a></li>
+                <li><a href="{:url('/index/member/registration')}">签到排行</a></li>
+                <li><a href="{:url('/index/member/top')}">排行榜</a></li>
 
-                <li><a href="__ROOT__/index/member/tip">打赏</a></li>
+                <li><a href="{:url('/index/member/tip')}">打赏</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="__ROOT__/index/member/footprint">网站统计</a></li>
+                <li><a href="{:url('/index/member/footprint')}">网站统计</a></li>
                 <li><a href="{:url('index/member/tip','appointment=1')}">预约录课</a></li>
               </ul>
             </li>
           </ul>
-          <form class="navbar-form navbar-left" action="__ROOT__/index/index/like">
+          <form class="navbar-form navbar-left" action="{:url('/index/index/like')}">
             <div class="form-group">
               <input type="text" class="form-control" name="search" placeholder="search" value="{$Think.get.search}">
             </div>
@@ -183,7 +181,7 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              {if condition="$Think.cookie.phone"} <a href="__ROOT__/index/member/home/user_id/{$Think.cookie.user_id}">
+              {if condition="$Think.cookie.phone"} <a href="{:url('/index/member/home/user_id/')}{$Think.cookie.user_id}">
                 {if condition="$Think.cookie.figureurl_qq_2"}
  <img class="img-circle"  style="width: 18px; height: 18px;" src="{$Think.cookie.figureurl_qq_2}"> 
  {$Think.cookie.nickname} 
@@ -217,7 +215,7 @@
 
              
 
-              {if condition="$Request.url == '__ROOT__/index/index/register'"}
+              {if ($Request.url == url('/index/index/register'))}
                   <li class="active" data-placement="bottom" title="Tooltip on bottom">
                {else/}
                 <li >
@@ -235,20 +233,20 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-bell" style="color: 3goldenrod" aria-hidden="true"></span>
    <span class="badge" style="background-color: goldenrod">80</span> </a>
               <ul class="dropdown-menu">
-                <li><a href="__ROOT__/index/member/vip">新消息 - 开发中</a>
+                <li><a href="{:url('/index/member/vip')}">新消息 - 开发中</a>
 <br>
-                  <a href="__ROOT__/index/member/vip">VIP中心</a>
+                  <a href="{:url('/index/member/vip')}">VIP中心</a>
                 </li>
-                <li><a href="__ROOT__/index/index/order">我的订单</a></li>
-                <li><a href="__ROOT__/index/member/diary">学习进度</a></li>
-                <li><a href="__ROOT__/index/member/invite">邀请注册</a></li>
-                <li><a href="__ROOT__/index/member/money">
+                <li><a href="{:url('/index/index/order')}">我的订单</a></li>
+                <li><a href="{:url('/index/member/diary')}">学习进度</a></li>
+                <li><a href="{:url('/index/member/invite')}">邀请注册</a></li>
+                <li><a href="{:url('/index/member/money')}">
                   <span class="glyphicon glyphicon-jpy" style="color: goldenrod" aria-hidden="true"></span> 我的积分</a></li>
                   
                 <li role="separator" class="divider"></li>
 
                 <!--<li><a onclick="ajaxModelPay('0.1','135','签到{$Think.cookie.phone}{:date("y年m月d日 H:i:s")}','135{$Think.cookie.phone}{:time()}') href="" >签到</a></li>-->
-                <li>{if condition="$Think.cookie.phone"} <a href="__ROOT__/index/index/login/logout/1">退出登录</a>
+                <li>{if condition="$Think.cookie.phone"} <a href="{:url('/index/index/login/logout/1')}">退出登录</a>
                   {else /} 
                   <!-- <a href="__ROOT__/index/index/login">登录/注册</a> -->
                   <a href="{:url('/index/index/login')}">登录/注册</a>
@@ -261,17 +259,17 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">会员中心<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="__ROOT__/index/member/vip">VIP中心</a></li>
-                <li><a href="__ROOT__/index/index/order">我的订单</a></li>
-                <li><a href="__ROOT__/index/member/diary">学习进度</a></li>
-                <li><a href="__ROOT__/index/member/invite">邀请注册</a></li>
-                <li><a href="__ROOT__/index/member/money">
+                <li><a href="{:url('/index/member/vip')}">VIP中心</a></li>
+                <li><a href="{:url('/index/index/order')}">我的订单</a></li>
+                <li><a href="{:url('/index/member/diary')}">学习进度</a></li>
+                <li><a href="{:url('/index/member/invite')}">邀请注册</a></li>
+                <li><a href="{:url('/index/member/money')}">
                   <span class="glyphicon glyphicon-jpy" style="color: goldenrod" aria-hidden="true"></span> 我的积分</a></li>
                   
                 <li role="separator" class="divider"></li>
 
                 <!--<li><a onclick="ajaxModelPay('0.1','135','签到{$Think.cookie.phone}{:date("y年m月d日 H:i:s")}','135{$Think.cookie.phone}{:time()}') href="" >签到</a></li>-->
-                <li>{if condition="$Think.cookie.phone"} <a href="__ROOT__/index/index/login/logout/1">退出登录</a>
+                <li>{if condition="$Think.cookie.phone"} <a href="{:url('/index/index/login/logout/1')}">退出登录</a>
                   {else /} 
                   <!-- <a href="__ROOT__/index/index/login">登录/注册</a> -->
                   <a href="{:url('/index/index/login')}">登录/注册</a>
@@ -328,20 +326,20 @@
 
  
 
-  <li><a href="__ROOT__/index/index/like?search=路由">路由</a></li>
-  <li><a href="__ROOT__/index/index/like?search=模型">模型</a></li>
-  <li><a href="__ROOT__/index/index/like?search=分页">分页</a></li>
-  <li><a href="__ROOT__/index/index/like?search=支付宝">支付宝</a></li>
-  <li><a href="__ROOT__/index/index/like?search=签到">签到</a></li>
-  <li><a href="__ROOT__/index/index/like?search=微博">微博登录</a></li>
-  <li><a href="__ROOT__/index/index/like?search=API">API</a></li>
-  <li><a href="__ROOT__/index/index/like?search=短信">短信</a></li>
-  <li><a href="__ROOT__/index/index/like?search=商城">商城</a></li>
-  <li><a href="__ROOT__/index/index/like?search=ajax">Ajax</a></li>
-  <li><a href="__ROOT__/index/index/like?search=上传">上传</a></li>
-  <li><a href="__ROOT__/index/index/like?search=演示">演示</a></li>
-  <li><a href="__ROOT__/index/index/like?search=Bootstrap">Bootstrap</a></li>
-  <li><a href="__ROOT__/index/index/like?search=二维码">二维码</a></li>
+  <li><a href="{:url('index/index/like?search=路由')}">路由</a></li>
+  <li><a href="{:url('index/index/like?search=模型')}">模型</a></li>
+  <li><a href="{:url('index/index/like?search=分页')}">分页</a></li>
+  <li><a href="{:url('index/index/like?search=支付宝')}">支付宝</a></li>
+  <li><a href="{:url('index/index/like?search=签到')}">签到</a></li>
+  <li><a href="{:url('index/index/like?search=微博')}">微博登录</a></li>
+  <li><a href="{:url('index/index/like?search=API')}">API</a></li>
+  <li><a href="{:url('index/index/like?search=短信')}">短信</a></li>
+  <li><a href="{:url('index/index/like?search=商城')}">商城</a></li>
+  <li><a href="{:url('index/index/like?search=ajax')}">Ajax</a></li>
+  <li><a href="{:url('index/index/like?search=上传')}">上传</a></li>
+  <li><a href="{:url('index/index/like?search=演示')}">演示</a></li>
+  <li><a href="{:url('index/index/like?search=Bootstrap')}">Bootstrap</a></li>
+  <li><a href="{:url('index/index/like?search=二维码')}">二维码</a></li>
 
   </ol>
 {/if}

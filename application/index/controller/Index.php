@@ -2020,8 +2020,9 @@ die();
                         'phone' => $phone,
                         'password' => md5(trim($password)),
                         'invite' => $invite,
-                        'token' => $token
-
+                        'token' => $token,
+                        'name' =>$phone,
+                        'ip' =>Request::instance()->ip()
                     ]);
 
                     $user_id = $user->id;

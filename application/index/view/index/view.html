@@ -100,7 +100,7 @@
         </button>
         {/if}
         <a class="btn btn-default" href="https://jq.qq.com/?_wv=1027&k=5OjhBDy" role="button">下载源码</a>
-        <a  href="__ROOT__/index/member/tip" id="btn" class="btn btn-danger" target="_blank"  >打赏</a> 
+        <a  href="{:url('/index/member/tip')}" id="btn" class="btn btn-danger" target="_blank"  >打赏</a>
 
         <button onclick="showFull()" type="button" style="display: none">全屏</button>
 
@@ -149,7 +149,7 @@
 </div>
         {/if}
 
-        <a style="display: none;" href="__ROOT__/index/member/invite" id="btn" class="btn btn-warning" target="_blank"  >邀请一个同学注册即可免费观看本节</a>
+        <a style="display: none;" href="{:url('/index/member/invite')}" id="btn" class="btn btn-warning" target="_blank"  >邀请一个同学注册即可免费观看本节</a>
 
 
 
@@ -159,13 +159,13 @@
                 {$list.price}元/年  扫码支付
             </button>
             <a style="display: none;" href="__ROOT__/alipay/alipayapi.php?WIDtotal_fee=168&WIDsubject=【vip】thinkphp5 入门培训vip会员6个月&WIDout_trade_no={$list.id}{$Think.cookie.phone}{$date}&WIDbody=105&WIDshow_url=" id="btn" class="btn btn-warning" target="_blank"  >开通VIP会员免费看</a>
-            <a  href="__ROOT__/index/member/vip" id="btn" class="btn btn-warning" target="_blank"  >开通VIP会员免费看</a>
+            <a  href="{:url('/index/member/vip')}" id="btn" class="btn btn-warning" target="_blank"  >开通VIP会员免费看</a>
 
 
             <a class="btn btn-default" href="https://jq.qq.com/?_wv=1027&k=5QmBs7e" role="button">下载源码</a>
-            <a class="btn btn-default" href="__ROOT__/index/member/invite/id/{$list.id}" role="button">金币兑换</a>
+            <a class="btn btn-default" href="{:url('/index/member/invite/id/')}{$list.id}" role="button">金币兑换</a>
 
-            <a  href="__ROOT__/index/member/tip" id="btn" class="btn btn-danger" target="_blank"  >打赏</a>
+            <a  href="{:url('/index/member/tip')}" id="btn" class="btn btn-danger" target="_blank"  >打赏</a>
 
 
         {/if}
@@ -234,7 +234,7 @@
         <p>价格：{$list.price}    日期：{$list.create_time} 标签：
             {foreach name="list.label" item="vo" } 发布于：{$list.create_time}
 
-            <a class="btn btn-default btn-xs" href="__ROOT__/index/index/like?search={$vo}" role="button">{$vo}</a>
+            <a class="btn btn-default btn-xs" href="{:url('/index/index/like')}?search={$vo}" role="button">{$vo}</a>
 
 
             {/foreach}
